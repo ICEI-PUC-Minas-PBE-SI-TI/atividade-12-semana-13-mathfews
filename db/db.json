@@ -1,18 +1,84 @@
 {
-  "usuarios": [
+  "books": [
     {
-      "id": "187cb7e5-e097-4224-8bc7-b610c855e2b1",
-      "login": "admin",
-      "senha": "123",
-      "nome": "Administrador do Sistema",
-      "email": "admin@abc.com"
+      "id": 1,
+      "title": "O Senhor dos Anéis",
+      "author": "J.R.R. Tolkien",
+      "year": 1954,
+      "description": "Uma épica aventura de fantasia que segue a jornada de um hobbit chamado Frodo Bolseiro para destruir um anel poderoso e salvar a Terra Média.",
+      "genres": ["Fantasia", "Aventura"]
     },
     {
-      "id": "ec37c83d-4b7f-458d-9e10-3fda7d37cd3e",
-      "login": "user",
-      "senha": "123",
-      "nome": "Usuario Comum",
-      "email": "user@abc.com"
+      "id": 2,
+      "title": "Fahrenheit 451",
+      "author": "Ray Bradbury",
+      "year": 1953,
+      "description": "Em um futuro distópico, os bombeiros queimam livros para controlar a informação e manter a sociedade ignorante. O protagonista, Guy Montag, começa a questionar essa realidade e busca conhecimento.",
+      "genres": ["Distopia", "Ficção Científica"]
+    },
+    {
+      "id": 4,
+      "title": "1984",
+      "author": "George Orwell",
+      "year": 1948,
+      "description": "Em um regime totalitário onde o governo controla tudo, Winston Smith luta para manter sua individualidade e liberdade em meio à vigilância constante e à manipulação da verdade.",
+      "genres": ["Distopia", "Ficção Científica"]
+    },
+     {
+      "id": 3,
+      "title": "O Flores para Algernon",
+      "author": "Daniel Keyes",
+      "year": 1959,
+      "description": "Um jovem com QI baixo descobre um tratamento experimental que aumenta sua inteligência, mas com consequências imprevistas.",
+      "genres": ["Ficção Científica"]
+    },
+    {
+      "id": 5,
+      "title": "Orgulho e Preconceito",
+      "author": "Jane Austen",
+      "year": 1813,
+      "description": "Um romance clássico que explora temas de amor, sociedade e moralidade na Inglaterra do século XIX.",
+      "genres": ["Romance", "Clássico"]
+    },
+    {
+      "id": 6,
+      "title": "O Grande Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "year": 1925,
+      "description": "Um retrato da alta sociedade americana durante os anos 1920, centrado na vida do misterioso milionário Jay Gatsby e seu amor por Daisy Buchanan.",
+      "genres": ["Romance", "Clássico"]
+    },
+    {
+      "id": 7,
+      "title": "Moby Dick",
+      "author": "Herman Melville",
+      "year": 1851,
+      "description": "Uma épica narrativa sobre a obsessão de Ahab com a baleia branca Moby Dick, explorando temas de vingança, natureza e destino.",
+      "genres": ["Aventura", "Clássico"]
+    },
+    {
+      "id": 8,
+      "title": "Project Hail Mary",
+      "author": "Andy Weir",
+      "year": 2021,
+      "description": "Um astronauta preso em uma missão espacial solitária deve usar sua inteligência e criatividade para sobreviver e encontrar um caminho para casa.",
+      "genres": ["Ficção Científica"]
+    },
+    {
+      "id": 9,
+      "title": "A Biblioteca da Meia-Noite",
+      "author": "Lev Grossman",
+      "year": 2011,
+      "description": "Uma jovem descobre uma biblioteca secreta que contém livros que podem alterar a realidade, e embarca em uma jornada para descobrir outros realidades de sua vida",
+      "genres": ["Fantasia", "Aventura"]
+    },
+    {
+      "id": 10,
+      "title": "Revolução dos Bichos",
+      "author": "George Orwell",
+      "year": 1945,
+      "description": "Uma fábula política que critica o totalitarismo e a corrupção do poder, retratada através de animais que se rebelam contra seus humanos opressores.",
+      "genres": ["Ficção Política", "Clássico"]
     }
   ]
 }
