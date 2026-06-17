@@ -6,23 +6,28 @@ function createCard(obj) {
     name.textContent = obj.title
     const description = document.createElement('p')
     const ulTags = document.createElement('ul')
-    obj.tags.forEach(tag => {
+    obj.genres.forEach(genre => {
         const liTag = document.createElement('li')
-        liTag.textContent = tag
+        liTag.textContent = genre
         ulTags.appendChild(liTag)
     })
     description.appendChild(ulTags)
     description.textContent = obj.description
     card.appendChild(name)
     card.appendChild(description)
+    const button = document.createElement("button")
+    button.textContent = "Ver Detalhes"
+    card.appendChild(button)
     return card
 }
+
 async function fetchData() {
     const response = await fetch('books')
     const data = await response.json()
-    await data.forEach(obj => {
-        card = createCard(obj)
+    data.forEach((book) => {
+        const card = createCard(book)
         cardSection.appendChild(card)
     })
 }
+
 fetchData()
