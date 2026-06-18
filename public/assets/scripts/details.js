@@ -1,3 +1,15 @@
+const possibleColors = ["default", "blue", "purple", "yellow"]
+
+const cubeIcon = document.getElementById('cube-icon')
+
+cubeIcon.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme')
+    document.documentElement.style.transition = "all 0.8s ease-in-out"
+    let nextTheme = possibleColors[possibleColors.indexOf(currentTheme) + 1] || 'default'
+    document.documentElement.setAttribute('data-theme', nextTheme)
+})
+
+
 async function fetchBook(id) {
     try {
         const response = await fetch(`http://localhost:3000/books/${id}`);
@@ -32,7 +44,7 @@ function renderDetails(book) {
                 
                 <div class="modal-stats" style="margin: 1.5rem 0;">
                     <div class="stat-card">
-                        <span class="stat-icon"><i class="fa-solid fa-star" style="color: #ebd616;"></i></span>
+                        <span class="stat-icon"><i class="fa-solid fa-star" style="color: var(--accent-color);"></i></span>
                         <div class="stat-details">
                             <span class="stat-value">${book.nota ? book.nota.toFixed(1) : 'N/A'}</span>
                             <span class="stat-label">Nota</span>

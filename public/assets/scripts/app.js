@@ -2,7 +2,7 @@ const cardSection = document.getElementById('card-section')
 const searchInput = document.getElementById('search-input')
 const modal = document.getElementById('book-modal')
 const modalCloseBtn = document.getElementById('modal-close-btn')
-
+const possibleColors = ["default", "blue", "purple", "yellow"]
 let allBooks = []
 let activeCategory = 'all'
 let searchQuery = ''
@@ -10,7 +10,10 @@ let searchQuery = ''
 const cubeIcon = document.getElementById('cube-icon')
 
 cubeIcon.addEventListener('click', () => {
-    
+    const currentTheme = document.documentElement.getAttribute('data-theme')
+    document.documentElement.style.transition = "all 0.8s ease-in-out"
+    let nextTheme = possibleColors[possibleColors.indexOf(currentTheme) + 1] || 'default'
+    document.documentElement.setAttribute('data-theme', nextTheme)
 })
 
 
