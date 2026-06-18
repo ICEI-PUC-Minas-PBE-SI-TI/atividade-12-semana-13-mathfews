@@ -6,45 +6,44 @@ Para este projeto, além de migrarmos do JSON para o JSON Server, vamos permitir
 
 ## Informações Gerais
 
-- Nome:
-- Matrícula:
-- Proposta de projeto escolhida:
-- Breve descrição sobre seu projeto:
+- Nome: Matheus Felipe Costa William.
+- Matrícula: 927495
+- Proposta de projeto escolhida: Biblioteca Digital
+- Breve descrição sobre seu projeto: Um biblitoeca digital com livros selecionados pelo
 
 **Prints do trabalho**
 
-<< DADOS DO DB.JSON (ENTIDADE PRINCIPAL E SECUNDÁRIA) >>
-
 ```json
 {
-  "cidades": [
+  "books": [
     {
       "id": 1,
-      "nome": "Paris",
-      "descricao": "Capital francesa famosa por arte, gastronomia e arquitetura icônica.",
-      "conteudo": "Paris oferece museus de classe mundial, boulevards arborizados e cafés charmosos. Ideal para quem busca história, cultura e experiências gastronômicas.",
-      "pais": "França",
-      "destaque": true,
-      "data": "2025-03-30",
-      "imagemPrincipal": "img/paris.jpg"
+      "title": "O Senhor dos Anéis",
+      "author": "J.R.R. Tolkien",
+      "destaque": false,
+      "year": 1954,
+      "nota": 9.5,
+      "image": "https://m.media-amazon.com/images/I/81hCVEC0ExL._UF1000,1000_QL80_.jpg",
+      "favoritados": 1000,
+      "descriptionCheia": "Uma épica aventura de fantasia que segue a jornada de um hobbit chamado Frodo Bolseiro para destruir um anel poderoso e salvar a Terra Média.",
+      "descriptionCurta": "Uma épica aventura de fantasia que segue a jornada de um hobbit chamado Frodo Bolseiro para destruir um anel poderoso e salvar a Terra Média.",
+      "categoria": ["Fantasia", "Aventura"]
     }
   ],
-  "atracoes": [
+  "criticas": [
     {
       "id": 1,
-      "cidadeId": 1,
-      "nome": "Torre Eiffel",
-      "descricao": "Monumento símbolo de Paris com mirantes panorâmicos.",
-      "imagem": "img/atracoes/torre_eiffel.jpg"
+      "livro_id": 1,
+      "usuario": "Matheus",
+      "nota": 9.5,
+      "comentario": "Um livro incrível que me prendeu do começo ao fim! Pena que acaba :("
     }
   ]
 }
 ```
 
-<< COLOQUE A IMAGEM DA HOME AQUI >>
-
-<< COLOQUE A IMAGEM DA TELA DE DETALHES AQUI >>
-
+![home](public/assets/images/image1.png)
+![detalhes](public/assets/images/image2.png)
 
 
 ## **Orientações Gerais**
