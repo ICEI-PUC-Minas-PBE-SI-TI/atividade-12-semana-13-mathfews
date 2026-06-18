@@ -4,81 +4,121 @@
       "id": 1,
       "title": "O Senhor dos Anéis",
       "author": "J.R.R. Tolkien",
+      "destaque": false,
       "year": 1954,
-      "description": "Uma épica aventura de fantasia que segue a jornada de um hobbit chamado Frodo Bolseiro para destruir um anel poderoso e salvar a Terra Média.",
-      "genres": ["Fantasia", "Aventura"]
+      "nota": 9.5,
+      "favoritados": 1000,
+      "descriptionCheia": "Uma épica aventura de fantasia que segue a jornada de um hobbit chamado Frodo Bolseiro para destruir um anel poderoso e salvar a Terra Média.",
+      "descriptionCurta": "Uma épica aventura de fantasia que segue a jornada de um hobbit chamado Frodo Bolseiro para destruir um anel poderoso e salvar a Terra Média.",
+      "categoria": ["Fantasia", "Aventura"]
     },
     {
       "id": 2,
       "title": "Fahrenheit 451",
       "author": "Ray Bradbury",
+      "destaque": true,
+      "nota": 10,
+      "favoritados": 900,
       "year": 1953,
-      "description": "Em um futuro distópico, os bombeiros queimam livros para controlar a informação e manter a sociedade ignorante. O protagonista, Guy Montag, começa a questionar essa realidade e busca conhecimento.",
-      "genres": ["Distopia", "Ficção Científica"]
+      "descriptionCheia": "Em um futuro distópico, os bombeiros queimam livros para controlar a informação e manter a sociedade ignorante. O protagonista, Guy Montag, começa a questionar essa realidade e busca conhecimento.",
+      "descriptionCurta": "Em um futuro distópico, os bombeiros queimam livros para controlar a informação e manter a sociedade ignorante. O protagonista, Guy Montag, começa a questionar essa realidade e busca conhecimento.",
+      "categoria": ["Distopia", "Ficção Científica"]
     },
     {
       "id": 4,
       "title": "1984",
       "author": "George Orwell",
+      "destaque": true,
+      "nota": 10,
+      "favoritados": 850,
       "year": 1948,
-      "description": "Em um regime totalitário onde o governo controla tudo, Winston Smith luta para manter sua individualidade e liberdade em meio à vigilância constante e à manipulação da verdade.",
-      "genres": ["Distopia", "Ficção Científica"]
+      "descriptionCheia": "Em um regime totalitário onde o governo controla tudo, Winston Smith luta para manter sua individualidade e liberdade em meio à vigilância constante e à manipulação da verdade.",
+      "descriptionCurta": "Em um regime totalitário onde o governo controla tudo, Winston Smith luta para manter sua individualidade e liberdade em meio à vigilância constante e à manipulação da verdade.",
+      "categoria": ["Distopia", "Ficção Científica"]
     },
      {
       "id": 3,
       "title": "O Flores para Algernon",
+      "destaque": true,
+      "nota": 10,
+      "favoritados": 780,
       "author": "Daniel Keyes",
       "year": 1959,
-      "description": "Um jovem com QI baixo descobre um tratamento experimental que aumenta sua inteligência, mas com consequências imprevistas.",
-      "genres": ["Ficção Científica"]
+      "descriptionCheia": "Em um futuro distópico, os bombeiros queimam livros para controlar a informação e manter a sociedade ignorante. O protagonista, Guy Montag, começa a questionar essa realidade e busca conhecimento.",
+      "descriptionCurta": "Um jovem com QI baixo descobre um tratamento experimental que aumenta sua inteligência, mas com consequências imprevistas.",
+      "categoria": ["Ficção Científica"]
     },
     {
       "id": 5,
       "title": "Orgulho e Preconceito",
+      "destaque": false,
+      "nota": 8,
+      "favoritados": 850,
       "author": "Jane Austen",
       "year": 1813,
-      "description": "Um romance clássico que explora temas de amor, sociedade e moralidade na Inglaterra do século XIX.",
-      "genres": ["Romance", "Clássico"]
+      "descriptionCheia": "Em um futuro distópico, os bombeiros queimam livros para controlar a informação e manter a sociedade ignorante. O protagonista, Guy Montag, começa a questionar essa realidade e busca conhecimento.",
+      "descriptionCurta": "Um romance clássico que explora temas de amor, sociedade e moralidade na Inglaterra do século XIX.",
+      "categoria": ["Romance", "Clássico"]
     },
     {
       "id": 6,
       "title": "O Grande Gatsby",
+      "destaque": false,
+      "nota": 9,
+      "favoritados": 700,
       "author": "F. Scott Fitzgerald",
       "year": 1925,
-      "description": "Um retrato da alta sociedade americana durante os anos 1920, centrado na vida do misterioso milionário Jay Gatsby e seu amor por Daisy Buchanan.",
-      "genres": ["Romance", "Clássico"]
+      "descriptionCheia": "Em um futuro distópico, os bombeiros queimam livros para controlar a informação e manter a sociedade ignorante. O protagonista, Guy Montag, começa a questionar essa realidade e busca conhecimento.",
+      "descriptionCurta": "Um retrato da alta sociedade americana durante os anos 1920, centrado na vida do misterioso milionário Jay Gatsby e seu amor por Daisy Buchanan.",
+      "categoria": ["Romance", "Clássico"]
     },
     {
       "id": 7,
       "title": "Moby Dick",
+      "destaque": false,
+      "nota": 9,
+      "favoritados": 600,
       "author": "Herman Melville",
       "year": 1851,
-      "description": "Uma épica narrativa sobre a obsessão de Ahab com a baleia branca Moby Dick, explorando temas de vingança, natureza e destino.",
-      "genres": ["Aventura", "Clássico"]
+      "descriptionCheia": "Em um futuro distópico, os bombeiros queimam livros para controlar a informação e manter a sociedade ignorante. O protagonista, Guy Montag, começa a questionar essa realidade e busca conhecimento.",
+      "descriptionCurta": "Uma épica narrativa sobre a obsessão de Ahab com a baleia branca Moby Dick, explorando temas de vingança, natureza e destino.",
+      "categoria": ["Aventura", "Clássico"]
     },
     {
       "id": 8,
       "title": "Project Hail Mary",
+      "destaque": false,
+      "nota": 9.5,
+      "favoritados": 650,
       "author": "Andy Weir",
       "year": 2021,
-      "description": "Um astronauta preso em uma missão espacial solitária deve usar sua inteligência e criatividade para sobreviver e encontrar um caminho para casa.",
-      "genres": ["Ficção Científica"]
+      "descriptionCheia": "Em um futuro distópico, os bombeiros queimam livros para controlar a informação e manter a sociedade ignorante. O protagonista, Guy Montag, começa a questionar essa realidade e busca conhecimento.",
+      "descriptionCurta": "Um astronauta preso em uma missão espacial solitária deve usar sua inteligência e criatividade para sobreviver e encontrar um caminho para casa.",
+      "categoria": ["Ficção Científica"]
     },
     {
       "id": 9,
       "title": "A Biblioteca da Meia-Noite",
+      "destaque": true,
+      "nota": 9.5,
+      "favoritados": 750,
       "author": "Lev Grossman",
       "year": 2011,
-      "description": "Uma jovem descobre uma biblioteca secreta que contém livros que podem alterar a realidade, e embarca em uma jornada para descobrir outros realidades de sua vida",
-      "genres": ["Fantasia", "Aventura"]
+      "descriptionCheia": "Em um futuro distópico, os bombeiros queimam livros para controlar a informação e manter a sociedade ignorante. O protagonista, Guy Montag, começa a questionar essa realidade e busca conhecimento.",
+      "descriptionCurta": "Uma jovem descobre uma biblioteca secreta que contém livros que podem alterar a realidade, e embarca em uma jornada para descobrir outros realidades de sua vida",
+      "categoria": ["Fantasia", "Aventura"]
     },
     {
       "id": 10,
       "title": "Revolução dos Bichos",
+      "destaque": false,
+      "nota": 8,
+      "favoritados": 720,
       "author": "George Orwell",
       "year": 1945,
-      "description": "Uma fábula política que critica o totalitarismo e a corrupção do poder, retratada através de animais que se rebelam contra seus humanos opressores.",
-      "genres": ["Ficção Política", "Clássico"]
+      "descriptionCheia": "Em um futuro distópico, os bombeiros queimam livros para controlar a informação e manter a sociedade ignorante. O protagonista, Guy Montag, começa a questionar essa realidade e busca conhecimento.",
+      "descriptionCurta": "Uma fábula política que critica o totalitarismo e a corrupção do poder, retratada através de animais que se rebelam contra seus humanos opressores.",
+      "categoria": ["Ficção Política", "Clássico"]
     }
   ]
 }

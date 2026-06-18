@@ -1,11 +1,263 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Kubo - Detalhes do Livro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=JetBrains+Mono:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        .details-page-wrapper {
+            margin-top: 3rem;
+            margin-bottom: 5rem;
+        }
+
+        .back-link-container {
+            margin-bottom: 2rem;
+        }
+
+        .back-btn-details {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 0.75rem 1.25rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            transition: var(--transition-smooth);
+        }
+
+        .back-btn-details:hover {
+            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.07);
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateX(-4px);
+        }
+
+        .details-main-card {
+            background: rgba(30, 41, 59, 0.35);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border-color);
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.6);
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            min-height: 500px;
+        }
+
+        .details-cover-side {
+            background: var(--cover-gradient-default);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem;
+            position: relative;
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+            overflow: hidden;
+        }
+
+        .details-cover-side .cover-book-icon-lg {
+            font-size: 7rem;
+            color: rgba(255, 255, 255, 0.18);
+            z-index: 2;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.25);
+        }
+
+        .details-info-side {
+            padding: 3.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .error-container {
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+
+        .error-container i {
+            font-size: 4rem;
+            color: #ef4444;
+            margin-bottom: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .details-grid {
+                grid-template-columns: 1fr;
+            }
+            .details-cover-side {
+                height: 240px;
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            }
+            .details-info-side {
+                padding: 2rem;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    
+    <div class="mesh-glow mesh-glow-1"></div>
+    <div class="mesh-glow mesh-glow-2"></div>
+
+    <header class="app-header">
+        <div class="header-container">
+            <div class="logo-area">
+                <i class="fa-solid fa-cube logo-icon"></i>
+                <h1 class="brand-title"><a href="index.html" style="text-decoration: none; color: inherit;">Kubo</a></h1>
+            </div>
+            <p class="brand-subtitle">Biblioteca digital dos maiores autores</p>
+        </div>
+    </header>
+
+    <main class="app-main">
+        <div class="container details-page-wrapper">
+            <div class="back-link-container">
+                <a href="index.html" class="back-btn-details">
+                    <i class="fa-solid fa-arrow-left"></i> Voltar para a Galeria
+                </a>
+            </div>
+
+            <section id="details-section" class="details-main-card">
+                <div style="padding: 4rem; text-align: center; color: var(--text-secondary);">
+                    <i class="fa-solid fa-circle-notch fa-spin" style="font-size: 2.5rem; margin-bottom: 1rem;"></i>
+                    <p>Carregando informações do livro...</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="app-footer">
+        <div class="container">
+            <p>&copy; 2026 Kubo. Todos os direitos reservados. Projeto Acadêmico.</p>
+        </div>
+    </footer>
+
+    <script>
+        function getCoverGradient(obj) {
+            if (obj.categoria && obj.categoria.length > 0) {
+                const cat = obj.categoria[0].toLowerCase();
+                if (cat.includes('ficção') || cat.includes('distopia')) {
+                    return 'var(--cover-gradient-1)';
+                } else if (cat.includes('romance')) {
+                    return 'var(--cover-gradient-2)';
+                } else if (cat.includes('fantasia')) {
+                    return 'var(--cover-gradient-3)';
+                } else if (cat.includes('aventura') || cat.includes('clássico')) {
+                    return 'var(--cover-gradient-4)';
+                }
+            }
+            const grads = ['var(--cover-gradient-1)', 'var(--cover-gradient-2)', 'var(--cover-gradient-3)', 'var(--cover-gradient-4)'];
+            return grads[(obj.id || 0) % grads.length];
+        }
+
+        async function fetchBook(id) {
+            try {
+                const response = await fetch(`http://localhost:3000/books/${id}`);
+                if (!response.ok) throw new Error('Livro não encontrado');
+                return await response.json();
+            } catch (err) {
+                console.error(err);
+                return null;
+            }
+        }
+
+        function renderDetails(book) {
+            const container = document.getElementById('details-section');
+            if (!book) {
+                container.innerHTML = `
+                    <div class="error-container">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        <h2>Livro Não Encontrado</h2>
+                        <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">O link pode estar quebrado ou o livro foi removido.</p>
+                        <a href="index.html" class="filter-tab active" style="text-decoration: none; display: inline-block;">Retornar à Home</a>
+                    </div>
+                `;
+                return;
+            }
+
+            const coverGradient = getCoverGradient(book);
+            
+            let genreHtml = '';
+            if (book.categoria) {
+                book.categoria.forEach(cat => {
+                    genreHtml += `<span class="badge" style="background: rgba(99, 102, 241, 0.1); border: 1px solid rgba(99, 102, 241, 0.2); color: #a5b4fc; margin-right: 0.5rem;">${cat}</span>`;
+                });
+            }
+
+            container.innerHTML = `
+                <div class="details-grid">
+                    <div class="details-cover-side" style="background: ${coverGradient}">
+                        <div class="cover-glow"></div>
+                        <i class="fa-solid fa-book-open details-cover-side cover-book-icon-lg"></i>
+                    </div>
+                    <div class="details-info-side">
+                        <div class="modal-header-info">
+                            <div class="modal-genres" style="margin-bottom: 0.75rem;">${genreHtml}</div>
+                            <h2 style="font-family: var(--font-display); font-size: 2.5rem; line-height: 1.2; margin-bottom: 0.25rem; font-weight: 700;">${book.title}</h2>
+                            <p class="book-author-name" style="font-size: 1.1rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">${book.author || 'Autor Desconhecido'}</p>
+                        </div>
+                        
+                        <div class="modal-stats" style="margin: 1.5rem 0;">
+                            <div class="stat-card">
+                                <span class="stat-icon"><i class="fa-solid fa-star"></i></span>
+                                <div class="stat-details">
+                                    <span class="stat-value">${book.nota ? book.nota.toFixed(1) : 'N/A'}</span>
+                                    <span class="stat-label">Nota</span>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-icon"><i class="fa-solid fa-calendar-days"></i></span>
+                                <div class="stat-details">
+                                    <span class="stat-value">${book.year || 'N/A'}</span>
+                                    <span class="stat-label">Ano</span>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-icon"><i class="fa-solid fa-heart"></i></span>
+                                <div class="stat-details">
+                                    <span class="stat-value">${book.favoritados || 0}</span>
+                                    <span class="stat-label">Favoritos</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal-description-box" style="border-top: 1px solid rgba(255,255,255,0.06); padding-top: 1.5rem;">
+                            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--text-secondary);">Sinopse</h3>
+                            <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text-secondary); text-align: justify;">${book.descriptionCheia || book.descriptionCurta || 'Sem sinopse disponível.'}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        async function init() {
+            const params = new URLSearchParams(window.location.search);
+            const id = params.get('id');
+            if (!id) {
+                renderDetails(null);
+                return;
+            }
+            const book = await fetchBook(id);
+            renderDetails(book);
+        }
+
+        init();
+    </script>
 </body>
 </html>
