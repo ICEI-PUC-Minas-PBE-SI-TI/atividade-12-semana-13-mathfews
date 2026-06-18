@@ -7,6 +7,13 @@ let allBooks = []
 let activeCategory = 'all'
 let searchQuery = ''
 
+const cubeIcon = document.getElementById('cube-icon')
+
+cubeIcon.addEventListener('click', () => {
+    
+})
+
+
 function createCard(obj) {
     const card = document.createElement('div')
     card.classList.add('card')
@@ -189,13 +196,13 @@ function renderPage() {
 }
 
 function openModal(book, image) {
+    const starIcon = document.getElementById('modal-rating-icon')
+    starIcon.style.color = 'gold'
     if (!modal) return
-    
     const modalCover = document.getElementById('modal-cover')
     if (modalCover) {
-        modalCover.src = image
+        modalCover.style.backgroundImage = `url(${image})`
     }
-    
     const modalTags = document.getElementById('modal-tags')
     if (modalTags) {
         modalTags.innerHTML = ''

@@ -11,29 +11,17 @@ async function fetchBook(id) {
 }
 function renderDetails(book) {
     const container = document.getElementById('details-section');
-    if (!book) {
-        container.innerHTML = `
-            <div class="error-container">
-                <i class="fa-solid fa-circle-exclamation"></i>
-                <h2>Livro Não Encontrado</h2>
-                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">O link pode estar quebrado ou o livro foi removido.</p>
-                <a href="index.html" class="filter-tab active" style="text-decoration: none; display: inline-block;">Retornar à Home</a>
-            </div>
-        `;
-        return;
-    }
     let genreHtml = '';
     if (book.categoria) {
         book.categoria.forEach(cat => {
-            genreHtml += `<span class="badge" style="background: rgba(99, 102, 241, 0.1); border: 1px solid rgba(99, 102, 241, 0.2); color: #a5b4fc; margin-right: 0.5rem;">${cat}</span>`;
+            genreHtml += `<span class="badge" style="background-color: transparent; padding: 2px; padding-left: 8px;padding-right: 8px; border: 1px solid rgba(0, 0, 0, 0.2); border-radius: 10px; color: #00000084; margin-right: 0.5rem;">${cat}</span>`;
         });
     }
 
     container.innerHTML = `
         <div class="details-grid">
-            <div class="details-cover-side" style="background: ${coverGradient}">
+            <div class="details-cover-side" style="background-image: url(${book.image}); background-size: cover; background-position: center;">
                 <div class="cover-glow"></div>
-                <i class="fa-solid fa-book-open details-cover-side cover-book-icon-lg"></i>
             </div>
             <div class="details-info-side">
                 <div class="modal-header-info">
@@ -44,7 +32,7 @@ function renderDetails(book) {
                 
                 <div class="modal-stats" style="margin: 1.5rem 0;">
                     <div class="stat-card">
-                        <span class="stat-icon"><i class="fa-solid fa-star"></i></span>
+                        <span class="stat-icon"><i class="fa-solid fa-star" style="color: #ebd616;"></i></span>
                         <div class="stat-details">
                             <span class="stat-value">${book.nota ? book.nota.toFixed(1) : 'N/A'}</span>
                             <span class="stat-label">Nota</span>
