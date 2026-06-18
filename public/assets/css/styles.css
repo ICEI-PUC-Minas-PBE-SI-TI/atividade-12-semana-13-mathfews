@@ -275,7 +275,6 @@ body {
     color: white;
     text-align: center;
     overflow: hidden;
-    background: var(--cover-gradient-default);
     transition: var(--transition-smooth);
 }
 
@@ -557,7 +556,6 @@ body {
 
 .modal-cover-side {
     position: relative;
-    background: var(--cover-gradient-default);
     display: flex;
     align-items: center;
     justify-content: center;

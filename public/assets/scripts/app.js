@@ -36,13 +36,9 @@ function createCard(obj) {
     
     const coverGradient = getCoverGradient(obj)
     
-    const cover = document.createElement('div')
+    const cover = document.createElement('img')
     cover.classList.add('card-cover')
-    cover.style.background = coverGradient
-    
-    const coverDecor = document.createElement('div')
-    coverDecor.classList.add('cover-decor')
-    cover.appendChild(coverDecor)
+    cover.href = obj.image
     
     const coverTitle = document.createElement('div')
     coverTitle.classList.add('cover-title')
