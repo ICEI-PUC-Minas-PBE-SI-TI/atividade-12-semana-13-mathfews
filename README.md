@@ -6,7 +6,7 @@ Para este projeto, além de migrarmos do JSON para o JSON Server, vamos permitir
 
 ## Informações Gerais
 
-- Nome: Matheus Felipe Costa William.
+- Nome: Matheus Felipe Costa William
 - Matrícula: 927495
 - Proposta de projeto escolhida: Biblioteca Digital
 - Breve descrição sobre seu projeto: Um biblitoeca digital com livros selecionados pelo
