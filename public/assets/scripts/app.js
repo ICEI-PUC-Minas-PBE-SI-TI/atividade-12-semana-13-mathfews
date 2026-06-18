@@ -7,43 +7,21 @@ let allBooks = []
 let activeCategory = 'all'
 let searchQuery = ''
 
-function getCoverGradient(obj) {
-    if (obj.categoria && obj.categoria.length > 0) {
-        const cat = obj.categoria[0].toLowerCase();
-        if (cat.includes('ficção') || cat.includes('distopia')) {
-            return 'var(--cover-gradient-1)';
-        } else if (cat.includes('romance')) {
-            return 'var(--cover-gradient-2)';
-        } else if (cat.includes('fantasia')) {
-            return 'var(--cover-gradient-3)';
-        } else if (cat.includes('aventura') || cat.includes('clássico')) {
-            return 'var(--cover-gradient-4)';
-        }
-    }
-    
-    const grads = [
-        'var(--cover-gradient-1)', 
-        'var(--cover-gradient-2)', 
-        'var(--cover-gradient-3)', 
-        'var(--cover-gradient-4)'
-    ];
-    return grads[obj.id % grads.length];
-}
-
 function createCard(obj) {
     const card = document.createElement('div')
     card.classList.add('card')
-    
-    const coverGradient = getCoverGradient(obj)
-    
-    const cover = document.createElement('img')
+
+    const cover = document.createElement('div')
     cover.classList.add('card-cover')
-    cover.href = obj.image
     
-    const coverTitle = document.createElement('div')
-    coverTitle.classList.add('cover-title')
-    coverTitle.textContent = obj.title
-    cover.appendChild(coverTitle)
+    const coverDecor = document.createElement('div')
+    coverDecor.classList.add('cover-decor')
+    cover.appendChild(coverDecor)
+    
+    const coverImage = document.createElement('img')
+    coverImage.classList.add('cover-image')
+    coverImage.src = obj.image
+    cover.appendChild(coverImage)
     
     const coverIcon = document.createElement('i')
     coverIcon.className = 'fa-solid fa-book-open cover-book-icon'
@@ -57,6 +35,11 @@ function createCard(obj) {
     const infoArea = document.createElement('div')
     infoArea.classList.add('card-info')
     
+    const coverTitle = document.createElement('div')
+    coverTitle.classList.add('cover-title')
+    coverTitle.textContent = obj.title
+    infoArea.appendChild(coverTitle)
+
     const author = document.createElement('span')
     author.classList.add('card-author')
     author.textContent = obj.author || 'Autor Desconhecido'
@@ -106,7 +89,7 @@ function createCard(obj) {
     content.appendChild(meta)
     cover.style.cursor = 'pointer'
     cover.addEventListener('click', () => {
-        openModal(obj, coverGradient)
+        openModal(obj, obj.image)
     })
 
     const button = document.createElement("button")
@@ -174,9 +157,12 @@ function renderCategoryFilters(categories) {
     categories.forEach(category => {
         const tab = document.createElement('button')
         tab.classList.add('filter-tab')
+        tab.classList.add('unselected')
         if (activeCategory === category) tab.classList.add('active')
         tab.textContent = category
         tab.addEventListener('click', () => {
+            tab.classList.remove('unselected')
+            tab.classList.add('active')
             activeCategory = category
             renderPage()
         })
@@ -202,12 +188,12 @@ function renderPage() {
     renderCategoryFilters(categories)
 }
 
-function openModal(book, coverGradient) {
+function openModal(book, image) {
     if (!modal) return
     
     const modalCover = document.getElementById('modal-cover')
     if (modalCover) {
-        modalCover.style.background = coverGradient
+        modalCover.src = image
     }
     
     const modalTags = document.getElementById('modal-tags')
